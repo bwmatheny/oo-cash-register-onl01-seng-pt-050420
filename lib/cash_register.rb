@@ -12,4 +12,12 @@ attr_accessor :total, :discount, :items, :last_transaction
     @total += price * quantity
   end
 
+  def apply_discount
+    if @discount > 0
+      @total = @total - (@total * @discount / 100)
+    else
+      puts "There is no discount to apply."
+    end
+  end
+
 end
